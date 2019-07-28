@@ -1,1 +1,1 @@
-export PATH="${PATH}:/home/fethbita/bin"
+export PATH="${PATH}:/home/fethbita/.bin"
