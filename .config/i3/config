@@ -168,6 +168,7 @@ exec telegram-desktop
 exec discord
 exec steam
 exec lutris
+# For Battle.net
 exec "lutris lutris:rungameid/27"
 
 # assign layouts
