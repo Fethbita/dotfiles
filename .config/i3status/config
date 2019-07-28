@@ -1,0 +1,55 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 1
+}
+
+order += "battery 0"
+order += "load"
+order += "disk /"
+order += "memory"
+order += "volume master"
+order += "time"
+
+battery 0 {
+        format = "%status %percentage %remaining %emptytime"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        low_threshold = 10
+}
+
+load {
+        format = "%1min"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY: %free"
+}
+
+time {
+        format = "%Y-%m-%d %a %I:%M:%S %p"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
