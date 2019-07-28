@@ -234,7 +234,7 @@ gaps inner 10
 gaps outer 0
 
 # Wallpaper
-exec_always ~/.fehbg
+exec_always home/fethbita/bin/.fehbg
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
