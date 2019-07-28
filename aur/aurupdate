@@ -1,0 +1,27 @@
+#!/bin/bash
+cd ~;
+mkdir tmp;
+cd tmp;
+auracle sync | while read -r name; do
+    echo "$name";
+    auracle clone "$name";
+    cd "$name";
+    makepkg -sirc --noconfirm;
+    cd ..;
+    rm -rf "$name";
+done
+pacman -Qqm | while read -r name; do
+    if [[ "$name" = *"git"* ]]; then
+        echo "$name";
+        auracle clone "$name";
+        cd "$name";
+        makepkg -sirc --noconfirm;
+        cd ..;
+        rm -rf "$name";
+    elif [[ "$name" = "st" ]]; then
+        echo "$name";
+        echo "Skipping st";
+    fi
+done
+cd ~;
+rmdir tmp;
