@@ -1,0 +1,5 @@
+[user]
+	email = Fethbita@users.noreply.github.com
+	name = Fethbita
+[credential]
+	helper = cache --timeout=3600
