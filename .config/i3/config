@@ -172,7 +172,7 @@ exec lutris
 exec "lutris lutris:rungameid/27"
 
 # assign layouts
-for_window [workspace="$ws1"] layout tabbed
+#for_window [workspace="$ws1"] layout tabbed
 for_window [workspace="$ws9"] layout tabbed
 #for_window [workspace=$ws10] layout tabbed
 # Spotify is broken
