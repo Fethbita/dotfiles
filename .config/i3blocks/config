@@ -1,0 +1,105 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=$SCRIPT_DIR/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# Volume indicator
+[volume-pulseaudio]
+command=$SCRIPT_DIR/i3blocks-contrib/volume-pulseaudio/volume-pulseaudio -F '${SYMB}${VOL}%' -f '${SYMB}${VOL}%' -H ' ' -M ' ' -L ' ' -X ' '
+interval=once
+signal=1
+
+# Network interface monitoring
+#[bandwidth2]
+#interval=persist
+#markup=pango
+#label=
+
+# Disk usage
+[disk]
+label=
+interval=30
+
+# Memory usage
+[memory]
+label=
+interval=5
+
+# CPU usage
+[cpu_usage2]
+command=$SCRIPT_DIR/i3blocks-contrib/cpu_usage2/cpu_usage2 -l  -d 1
+markup=pango
+interval=persist
+min_width= 99%
+
+# Load average
+[load_average]
+label=
+interval=10
+
+# Temperature
+[temperature]
+label=
+interval=1
+
+# Battery indicator
+[battery2]
+markup=pango
+interval=30
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+[mediaplayer]
+instance=spotify
+interval=5
+signal=10
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+[keyindicator]
+instance=CAPS
+interval=once
+signal=11
+markup=pango
+
+[keyindicator]
+instance=NUM
+interval=once
+signal=11
+markup=pango
+
+# Date Time
+[time]
+command=date "+%Y-%m-%d %a %I:%M:%S %p"
+interval=5
