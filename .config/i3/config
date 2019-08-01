@@ -208,21 +208,22 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    i3bar_command i3bar -t
     position top
     status_command SCRIPT_DIR=/home/fethbita/.config/i3blocks/blocklets i3blocks
     tray_output primary
     font pango:Source Code Pro Bold 10
     colors {
-        background #000000
-        statusline #ffffff
-        separator #666666
+        background #00000070
+        statusline #ffffffff
+        separator #66666670
 
-        #                  #border #bg     #text
-        focused_workspace  #616161 #000000 #ffffff
-        active_workspace   #333333 #000000 #ffffff
-        inactive_workspace #333333 #000000 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        #                  #border   #bg     #text
+        focused_workspace  #616161ff #00000000 #ffffffff
+        active_workspace   #333333ff #00000000 #ffffffff
+        inactive_workspace #333333ff #00000000 #888888ff
+        urgent_workspace   #2f343aff #90000000 #ffffffff
+        binding_mode       #2f343aff #90000000 #ffffffff
     }
 }
 
