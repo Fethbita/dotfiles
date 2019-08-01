@@ -19,6 +19,9 @@ set smarttab            " Enable smart-tabs
 set softtabstop=4       " Number of spaces per Tab
 
 "" Advanced
+set undofile            " Maintain undo history between sessions
+set undodir=~/.vim/undodir
+
 set ruler               " Show row and column ruler information
 set showcmd             " Show commands being typed in normal mode
 
