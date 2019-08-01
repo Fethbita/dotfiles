@@ -211,6 +211,7 @@ bar {
     position top
     status_command SCRIPT_DIR=/home/fethbita/.config/i3blocks/blocklets i3blocks
     tray_output primary
+    font pango:Source Code Pro Bold 10
     colors {
         background #000000
         statusline #ffffff

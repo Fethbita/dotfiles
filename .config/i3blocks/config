@@ -25,8 +25,14 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=$SCRIPT_DIR/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=10
 markup=none
+
+# Generic media player support
+[mediaplayer]
+instance=spotify
+interval=5
+signal=10
 
 # Volume indicator
 [volume-pulseaudio]
@@ -72,15 +78,6 @@ interval=1
 markup=pango
 interval=30
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-[mediaplayer]
-instance=spotify
-interval=5
-signal=10
-
 # Key indicators
 #
 # Add the following bindings to i3 config file:
@@ -102,4 +99,8 @@ markup=pango
 # Date Time
 [time]
 command=date "+%Y-%m-%d %a %I:%M:%S %p"
-interval=5
+interval=1
+
+# Keyboard layout
+[kbdd_layout]
+interval=persist
