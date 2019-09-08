@@ -40,7 +40,7 @@ KEYTIMEOUT=1
 
 # Aliases
 alias rm='rm -i'
-alias ls='ls -hF --color=auto'
+alias ls='ls -hFH --color=auto'
 alias grep='grep --color=auto'
 alias df='df -h'
 alias ping='ping -c 5'
