@@ -1,28 +1,28 @@
 "" General
-syntax on               " Enable syntax highlighting
-set mouse=a             " Enable mouse support for all (a)
+syntax on                     " Enable syntax highlighting
+set mouse=a                   " Enable mouse support for all (a)
 
-set number              " Show line numbers
-set showmatch           " Highlight matching brace
-set visualbell          " Use visual bell (no beeping)
+set number relativenumber     " Show line numbers
+set showmatch                 " Highlight matching brace
+set visualbell                " Use visual bell (no beeping)
 
-set hlsearch            " Highlight all search results
-set smartcase           " Enable smart-case search
-set ignorecase          " Always case-insensitive
-set incsearch           " Searches for strings incrementally
+set hlsearch                  " Highlight all search results
+set smartcase                 " Enable smart-case search
+set ignorecase                " Always case-insensitive
+set incsearch                 " Searches for strings incrementally
 
-set autoindent          " Auto-indent new lines
-set expandtab           " Use spaces instead of tabs
-set shiftwidth=4        " Number of auto-indent spaces
-set smartindent         " Enable smart-indent
-set smarttab            " Enable smart-tabs
-set softtabstop=4       " Number of spaces per Tab
+set autoindent                " Auto-indent new lines
+set expandtab                 " Use spaces instead of tabs
+set shiftwidth=4              " Number of auto-indent spaces
+set smartindent               " Enable smart-indent
+set smarttab                  " Enable smart-tabs
+set softtabstop=4             " Number of spaces per Tab
 
 "" Advanced
-set undofile            " Maintain undo history between sessions
+set undofile                  " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 
-set ruler               " Show row and column ruler information
-set showcmd             " Show commands being typed in normal mode
+set ruler                     " Show row and column ruler information
+set showcmd                   " Show commands being typed in normal mode
 
 set backspace=indent,eol,start  " Backspace behaviour
