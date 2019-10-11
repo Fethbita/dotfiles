@@ -169,7 +169,7 @@ exec discord
 exec steam
 exec lutris
 # For Battle.net
-exec "lutris lutris:rungameid/27"
+exec "lutris lutris:rungameid/539"
 
 # assign layouts
 #for_window [workspace="$ws1"] layout tabbed
