@@ -1,5 +1,8 @@
 [user]
 	email = Fethbita@users.noreply.github.com
 	name = Fethbita
+	signingkey = 34FD858913F0A1080A137AB22DAC7407871459CE
 [credential]
 	helper = cache --timeout=3600
+[commit]
+	gpgsign = true
