@@ -1,9 +1,0 @@
-if [ $# -gt 0 ]; then
-    $*
-else
-    /home/fethbita/.screenlayout/mono.sh
-    numlockx
-    setxkbmap -option '' -option 'caps:swapescape' -option 'grp:win_space_toggle' -option 'grp_led:scroll' -layout 'us,tr'
-    xinput --set-prop 'Logitech Gaming Mouse G300' 'libinput Accel Profile Enabled' 0, 1
-    i3
-fi
