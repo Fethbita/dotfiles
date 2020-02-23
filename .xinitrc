@@ -23,5 +23,5 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-/home/fethbita/.startup.sh
+/home/fethbita/.startup_scripts/.startup.sh
 exec i3
