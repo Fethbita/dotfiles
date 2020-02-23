@@ -194,6 +194,8 @@ for_window [class="Pavucontrol"] mark "sound", move scratchpad
 # Run applications
 exec spotify
 exec code
+exec pavucontrol
+
 exec telegram-desktop
 exec discord
 exec steam
