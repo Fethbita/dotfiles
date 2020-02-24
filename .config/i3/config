@@ -163,7 +163,7 @@ assign [class="discord"] → $ws10
 #for_window [class="Spotify"] move to workspace $ws10
 
 # MARKS AND SCRATCHPAD
-bindsym $mod+Mod1+space scratchpad show
+bindsym $mod+Mod1+z scratchpad show
 
 bindsym $mod+Shift+Mod1+1 mark "alpha", move scratchpad
 bindsym $mod+Mod1+1 [con_mark="alpha"] scratchpad show
