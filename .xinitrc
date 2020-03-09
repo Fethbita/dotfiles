@@ -23,5 +23,8 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
+# ENVIRONMENT VARS
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
 /home/fethbita/.startup_scripts/.startup.sh
 exec i3
