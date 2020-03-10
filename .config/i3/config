@@ -184,12 +184,14 @@ bindsym $mod+Mod1+8 [con_mark="theta"] scratchpad show
 bindsym $mod+Shift+Mod1+9 mark "iota", move scratchpad
 bindsym $mod+Mod1+9 [con_mark="iota"] scratchpad show
 
-bindsym $mod+Mod1+m [con_mark="music"] scratchpad show
-for_window [class="Spotify"] mark "music", move scratchpad
-bindsym $mod+Mod1+c [con_mark="vscode"] scratchpad show
-for_window [class="Code"] mark "vscode", move scratchpad
-bindsym $mod+Mod1+s [con_mark="sound"] scratchpad show
-for_window [class="Pavucontrol"] mark "sound", move scratchpad
+for_window [class="Spotify"] move scratchpad
+bindsym $mod+Mod1+m [class="Spotify"] scratchpad show
+
+for_window [class="Code" window_role="browser-window"] move scratchpad
+bindsym $mod+Mod1+c [class="Code" window_role="browser-window"] scratchpad show
+
+for_window [class="Pavucontrol"] move scratchpad
+bindsym $mod+Mod1+s [class="Pavucontrol"] scratchpad show
 
 # Run applications
 exec spotify
