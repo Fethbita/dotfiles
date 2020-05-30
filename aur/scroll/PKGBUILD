@@ -1,0 +1,75 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# The following guidelines are specific to BZR, GIT, HG and SVN packages.
+# Other VCS sources are not natively supported by makepkg yet.
+
+# Maintainer: Burak Can Kus <burakcankus@outlook.com>
+pkgname=suckless-scroll-git
+pkgver=r232.002617a
+pkgrel=1
+pkgdesc="scrollbackbuffer program for suckless st"
+arch=('i686' 'x86_64')
+license=('MIT')
+depends=('glibc')
+makedepends=('git')
+provides=("scroll")
+url=https://git.suckless.org/scroll/
+source=('git://git.suckless.org/scroll')
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/scroll"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+	cd "$srcdir/scroll"
+	# This package provides a mechanism to provide a custom config.h. Multiple
+	# configuration states are determined by the presence of two files in
+	# $BUILDDIR:
+	#
+	# config.h  config.def.h  state
+	# ========  ============  =====
+	# absent    absent        Initial state. The user receives a message on how
+	#                         to configure this package.
+	# absent    present       The user was previously made aware of the
+	#                         configuration options and has not made any
+	#                         configuration changes. The package is built using
+	#                         default values.
+	# present                 The user has supplied his or her configuration. The
+	#                         file will be copied to $srcdir and used during
+	#                         build.
+	#
+	# After this test, config.def.h is copied from $srcdir to $BUILDDIR to
+	# provide an up to date template for the user.
+	if [ -e "$BUILDDIR/config.h" ]
+	then
+		cp "$BUILDDIR/config.h" "$srcdir/scroll/"
+	elif [ ! -e "$BUILDDIR/config.def.h" ]
+	then
+		msg='This package can be configured in config.h. Copy the config.def.h '
+		msg+='that was just placed into the package directory to config.h and '
+		msg+='modify it to change the configuration. Or just leave it alone to '
+		msg+='continue to use default values.'
+		warning "$msg"
+	fi
+	cp "config.def.h" "$BUILDDIR"
+}
+
+build() {
+	cd "$srcdir/scroll"
+	make
+}
+
+check() {
+	cd "$srcdir/scroll"
+	make test
+}
+
+package() {
+	cd "$srcdir/scroll"
+	make PREFIX=/usr DESTDIR="$pkgdir/" install
+}
