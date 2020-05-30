@@ -4,7 +4,8 @@ set mouse=a                   " Enable mouse support for all (a)
 
 set number relativenumber     " Show line numbers
 set showmatch                 " Highlight matching brace
-set visualbell                " Use visual bell (no beeping)
+"set visualbell               " Use visual bell (no beeping)
+set belloff=all               " Disable all bells (visual included)
 
 set hlsearch                  " Highlight all search results
 set smartcase                 " Enable smart-case search

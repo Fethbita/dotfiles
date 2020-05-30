@@ -29,7 +29,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # start a terminal
-bindsym $mod+Shift+Return exec "st -e tmux"
+bindsym $mod+Shift+Return exec "st"
 
 # change focus
 bindsym $mod+h focus left
