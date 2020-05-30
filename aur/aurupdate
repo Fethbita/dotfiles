@@ -3,6 +3,8 @@ cd ~;
 mkdir tmp;
 cd tmp;
 auracle sync | while read -r name; do
+    name=($name)
+    name=${name[0]}
     echo "$name";
     auracle clone "$name";
     cd "$name";
@@ -11,16 +13,16 @@ auracle sync | while read -r name; do
     rm -rf "$name";
 done
 pacman -Qqm | while read -r name; do
-    if [[ "$name" = *"git"* ]]; then
+    if [[ "$name" = "st-git" ]]; then
+        echo "$name";
+        echo "Skipping st";
+    elif [[ "$name" = *"git"* ]]; then
         echo "$name";
         auracle clone "$name";
         cd "$name";
         makepkg -sirc --noconfirm;
         cd ..;
         rm -rf "$name";
-    elif [[ "$name" = "st" ]]; then
-        echo "$name";
-        echo "Skipping st";
     fi
 done
 cd ~;
