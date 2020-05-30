@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt appendhistory
 unsetopt beep
 bindkey -v
@@ -33,7 +33,9 @@ bindkey -M vicmd "^[[3~" delete-char
 bindkey "^?" backward-delete-char
 
 # Set prompt to something that looks nice
-prompt adam2
+prompt adam2 8bit
+# https://stackoverflow.com/questions/47061766/zsh-prompt-adam2-script-output-without-newline-is-not-being-displayed
+setopt prompt_sp
 
 # Mode change delay time to 0.1
 KEYTIMEOUT=1
@@ -53,3 +55,5 @@ fi
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
 fi
+
+RPROMPT="%B%D %*"
